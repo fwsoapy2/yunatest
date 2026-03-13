@@ -57,6 +57,8 @@ body{
 /* ===== NAVIGATION ===== */
 .site-nav{
   margin-bottom: 24px;
+  position: relative;
+  z-index: 50000;
 }
 .nav-inner{
   display:flex;
