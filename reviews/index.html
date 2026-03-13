@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YunaBoosts - Reviews</title>
+  <meta name="description" content="See verified completed orders and reviews from YunaBoosts customers." />
+  <meta name="nav-depth" content="1">
+  <link rel="icon" type="image/png"
+    href="https://images-ext-1.discordapp.net/external/oHMiYNyU7kb5XMQ4WVjwV6mOyckRC_qQZcUYrZqk2gY/%3Fsize%3D4096/https/cdn.discordapp.com/icons/1451305417459372136/b73d024855d393a88a1ea6a3424dc989.png?format=webp&quality=lossless" />
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="bg-orb"></div>
+  <div class="container">
+    <div class="page-hero">
+      <h1>Verified Reviews</h1>
+      <p>All orders completed through our Discord. Every review is from a real customer with a verified order.</p>
+    </div>
+
+    <!-- Row 1: scrolls left -->
+    <div class="reviews-carousel">
+      <div class="reviews-track" id="track1">
+        <!-- Row 1 reviews (16 cards, duplicated for seamless loop) -->
+      </div>
+    </div>
+
+    <!-- Row 2: scrolls right (offset) -->
+    <div class="reviews-carousel" style="margin-top: -4px;">
+      <div class="reviews-track reviews-track-reverse" id="track2">
+        <!-- Row 2 reviews (16 cards, duplicated for seamless loop) -->
+      </div>
+    </div>
+
+    <div class="reviews-cta">
+      <a href="https://discord.gg/7w2BWAHSma" target="_blank">
+        <img src="https://media.discordapp.net/attachments/1451341708892831895/1481820095054614588/discord-white-icon.png?ex=69b4b401&is=69b36281&hm=2eaad3822d5f91737ef81fc1d0aeaa236b69e5a5b7f4378b6cdc9be8de796cc9&=&format=webp&quality=lossless" alt="" />
+        View All Reviews on Discord
+      </a>
+    </div>
+  </div>
+
+  <script src="../shared/nav.js"></script>
+  <script>
+    const reviews = [
+      { user:"@23333", type:"Boost", detail:"GC1 → GC2", mode:"2v2", method:"Solo", date:"Mar 5" },
+      { user:"@Craynz", type:"Account", detail:"S21 SSL 2v2 + Rewards", mode:"", method:"", date:"Mar 5" },
+      { user:"@hydro", type:"Boost", detail:"GC1 → GC2", mode:"2v2", method:"Solo", date:"Mar 5" },
+      { user:"@jckstr", type:"Tournament", detail:"3x SSL Tournament Winner", mode:"", method:"Solo", date:"Mar 6" },
+      { user:"@Daniii", type:"Boost", detail:"C1 → GC1", mode:"3v3", method:"Solo", date:"Mar 6" },
+      { user:"@ymiz ⍰", type:"Boost", detail:"GC2 → SSL + Rewards", mode:"2v2", method:"Solo", date:"Mar 6" },
+      { user:"@soyvahqt", type:"Boost", detail:"C1 → SSL + Rewards", mode:"3v3", method:"Solo", date:"Mar 6" },
+      { user:"@Daniii", type:"Boost", detail:"C1 → GC1", mode:"1v1", method:"Solo", date:"Mar 6" },
+      { user:"@dogus", type:"Tournament", detail:"3x SSL Tournament Winner", mode:"", method:"Duo", date:"Mar 7" },
+      { user:"@Sullii~", type:"Account", detail:"Ranked Ready Account", mode:"", method:"", date:"Mar 7" },
+      { user:"@Hypotherial", type:"Account", detail:"Ranked Ready Account", mode:"", method:"", date:"Mar 7" },
+      { user:"@mike", type:"Account", detail:"S21 SSL 2v2 No Rewards", mode:"", method:"", date:"Mar 7" },
+      { user:"@BoostedBran", type:"Boost", detail:"Custom Account", mode:"Custom", method:"Solo", date:"Mar 7" },
+      { user:"@Hypotherial", type:"Boost", detail:"C1 → C3", mode:"2v2", method:"Solo", date:"Mar 7" },
+      { user:"@plakkuu", type:"Boost", detail:"Plat 1 → Diamond 1", mode:"2v2", method:"Solo", date:"Mar 7" },
+      { user:"@Don", type:"Boost", detail:"GC1 → SSL + Rewards", mode:"2v2", method:"Solo", date:"Mar 8" },
+      { user:"@Lijo", type:"Boost", detail:"C3 → GC1", mode:"2v2", method:"Duo", date:"Mar 8" },
+      { user:"@fourb4nd", type:"Boost", detail:"C2 → SSL", mode:"Snow Day", method:"Solo", date:"Mar 8" },
+      { user:"@Hakz", type:"Tournament", detail:"SSL Tournament Winner", mode:"", method:"Solo", date:"Mar 8" },
+      { user:"@LUCKY", type:"Tournament", detail:"3x SSL Tournament Winner", mode:"", method:"Duo", date:"Mar 8" },
+      { user:"@Valarie", type:"Boost", detail:"C2 → GC1", mode:"2v2", method:"Solo", date:"Mar 9" },
+      { user:"@cal", type:"Boost", detail:"GC3 → SSL + Rewards", mode:"2v2", method:"Solo", date:"Mar 9" },
+      { user:"@Robin†", type:"Boost", detail:"C2 → GC1 + Rewards", mode:"2v2", method:"Solo", date:"Mar 9" },
+      { user:"@Hypotherial", type:"Boost", detail:"C3 → GC1 + Rewards", mode:"Snow Day", method:"Solo", date:"Mar 9" },
+      { user:"@flxy", type:"Boost", detail:"C3 → GC2", mode:"2v2", method:"Solo", date:"Mar 9" },
+      { user:"@BoostedBran", type:"Boost", detail:"Custom Request", mode:"Custom", method:"Solo", date:"Mar 10" },
+      { user:"@S252", type:"Account", detail:"S21 SSL 2v2 + 3v3 No Rewards", mode:"", method:"", date:"Mar 10" },
+      { user:"@Ag3nt_Penguin", type:"Account", detail:"Ranked Ready Account", mode:"", method:"", date:"Mar 10" },
+      { user:"@Sharp / Mat", type:"Boost", detail:"GC3 → SSL + Rewards", mode:"2v2", method:"Solo", date:"Mar 11" },
+      { user:"@ben", type:"Boost", detail:"GC1 → GC2 + Rewards", mode:"2v2", method:"Solo", date:"Mar 11" },
+      { user:"@s", type:"Boost", detail:"GC3 → SSL", mode:"2v2", method:"Solo", date:"Mar 11" },
+      { user:"@modric", type:"Tournament", detail:"3x SSL Tournament Winner", mode:"", method:"Duo", date:"Mar 9" },
+    ];
+
+    function makeCard(r) {
+      const typeClass = r.type.toLowerCase().includes('account') ? 'Account' :
+                        r.type.toLowerCase().includes('tournament') ? 'Tournament' : 'Boost';
+      let info = `<strong>${r.detail}</strong>`;
+      if (r.mode) info += ` &bull; ${r.mode}`;
+      if (r.method) info += ` &bull; ${r.method}`;
+      return `
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-user">${r.user}</span>
+            <span class="review-stars">★★★★★</span>
+          </div>
+          <div class="review-type">${typeClass}</div>
+          <div class="review-detail">${info}</div>
+          <div class="review-date">Completed ${r.date}, 2026</div>
+        </div>
+      `;
+    }
+
+    // Split reviews into 2 rows
+    const half = Math.ceil(reviews.length / 2);
+    const row1 = reviews.slice(0, half);
+    const row2 = reviews.slice(half);
+
+    // Duplicate for seamless scroll
+    const track1 = document.getElementById('track1');
+    const track2 = document.getElementById('track2');
+
+    track1.innerHTML = row1.map(makeCard).join('') + row1.map(makeCard).join('');
+    track2.innerHTML = row2.map(makeCard).join('') + row2.map(makeCard).join('');
+  </script>
+</body>
+</html>
